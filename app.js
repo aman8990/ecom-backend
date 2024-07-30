@@ -43,9 +43,9 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.get('/', (req, res) => {
-  res.status(200).json({ message: 'Hello from the server side!', app: 'app' });
-});
+// app.get('/', (req, res) => {
+//   res.status(200).json({ message: 'Hello from the server side!', app: 'app' });
+// });
 
 app.get('/', (req, res) => {
   res.send('Hello from the server side!');
