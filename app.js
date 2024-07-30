@@ -11,7 +11,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: 'http://127.0.0.1:4173',
+    origin: 'https://aman-ecom.netlify.app',
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
     allowedHeaders: ['Content-Type', 'Authorization'],
@@ -21,7 +21,7 @@ app.use(
 app.options('*', cors());
 
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:4173');
+  res.header('Access-Control-Allow-Origin', 'https://aman-ecom.netlify.app/');
   res.header('Access-Control-Allow-Credentials', true);
   next();
 });
