@@ -50,7 +50,7 @@ exports.createOrder = async (req, res) => {
         customer_phone: customerPhone,
       },
       order_meta: {
-        return_url: `https://ecom-backend-nrxg.vercel.app/cashfree/verify?cashfreeOrderId=${cashfreeOrderId}&userOrderId=${order._id}`,
+        return_url: `https://aman-ecom.netlify.app//cashfree/verify?cashfreeOrderId=${cashfreeOrderId}&userOrderId=${order._id}`,
       },
       order_note: '',
     };
