@@ -47,6 +47,10 @@ app.get('/', (req, res) => {
   res.status(200).json({ message: 'Hello from the server side!', app: 'app' });
 });
 
+app.get('/', (req, res) => {
+  res.send('Hello from the server side!');
+});
+
 app.use('/api/admin', adminRouter);
 app.use('/api/users', userRouter);
 
