@@ -21,7 +21,7 @@ app.use(
 app.options('*', cors());
 
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://aman-ecom.netlify.app/');
+  res.header('Access-Control-Allow-Origin', 'https://aman-ecom.netlify.app');
   res.header('Access-Control-Allow-Credentials', true);
   next();
 });
