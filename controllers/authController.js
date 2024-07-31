@@ -51,7 +51,7 @@ exports.signup = catchAsync(async (req, res, next) => {
       existingUser.password = password;
       await existingUser.save({ validateBeforeSave: false });
 
-      const verificationUrl = `http://127.0.0.1:5173/verifyEmail?token=${verificationToken}`;
+      const verificationUrl = `https://aman-ecom.netlify.app/verifyEmail?token=${verificationToken}`;
 
       await new Email(existingUser, verificationUrl).sendVerificationEmail();
 
@@ -75,7 +75,7 @@ exports.signup = catchAsync(async (req, res, next) => {
   const verificationToken = newUser.createVerificationToken();
   await newUser.save({ validateBeforeSave: false });
 
-  const verificationUrl = `http://127.0.0.1:5173/verifyEmail?token=${verificationToken}`;
+  const verificationUrl = `https://aman-ecom.netlify.app/verifyEmail?token=${verificationToken}`;
 
   await new Email(newUser, verificationUrl).sendVerificationEmail();
 
@@ -130,7 +130,7 @@ exports.login = catchAsync(async (req, res, next) => {
     const verificationToken = user.createVerificationToken();
     await user.save({ validateBeforeSave: false });
 
-    const verificationUrl = `http://127.0.0.1:5173/verifyEmail?token=${verificationToken}`;
+    const verificationUrl = `https://aman-ecom.netlify.app/verifyEmail?token=${verificationToken}`;
 
     await new Email(user, verificationUrl).sendVerificationEmail();
 
@@ -144,7 +144,7 @@ exports.login = catchAsync(async (req, res, next) => {
 
 exports.logout = catchAsync(async (req, res, next) => {
   res.cookie('jwt', 'loggedout', {
-    expires: new Date(Date.now() + 10 * 1000),
+    expires: new Date(Date.now()),
     httpOnly: true,
     secure: req.secure || req.headers['x-forwarded-proto'] === 'https',
     // secure: true,
@@ -261,7 +261,7 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
   await user.save({ validateBeforeSave: false });
 
   try {
-    const resetUrl = `http://127.0.0.1:5173/resetPassword?token=${resetToken}`;
+    const resetUrl = `https://aman-ecom.netlify.app/resetPassword?token=${resetToken}`;
 
     await new Email(user, resetUrl).sendPasswordReset();
 
