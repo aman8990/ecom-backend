@@ -28,7 +28,7 @@ const app = express();
 
 const allowedOrigins = [
   'http://127.0.0.1:4173',
-  'https://aman-ecom.netlify.app/',
+  'https://aman-ecom.netlify.app',
 ];
 
 app.use(
