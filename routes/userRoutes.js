@@ -13,7 +13,7 @@ router.get('/checkAuth', authController.isLoggedIn);
 router.post('/signup', authController.signup);
 router.patch('/verifyEmail', authController.verifyEmail);
 router.post('/login', authController.login);
-router.get('/logout', authController.logout);
+router.post('/logout', authController.logout);
 router.post('/contactUs', userController.contactUs);
 
 router.post('/forgotPassword', authController.forgotPassword);
